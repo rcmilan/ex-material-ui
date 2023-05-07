@@ -42,31 +42,35 @@ const SiteAppBar: React.FC = () => {
     />
   );
 
+  const renderMobilePageTitle = () => (
+    <>
+      <IconButton
+        edge="start"
+        color="inherit"
+        onClick={() => setMobileMenuOpen(true)}
+      >
+        <MenuIcon />
+      </IconButton>
+      <Typography variant="h6" noWrap>
+        {appTitle}
+      </Typography>
+    </>
+  );
+
+  const renderDesktopPageTitle = () => (
+    <>
+      <MenuBookIcon />
+      <Typography variant="h6" noWrap sx={{ ml: 1 }}>
+        {appTitle}
+      </Typography>
+    </>
+  );
+
   return (
     <AppBar position="static">
       <Toolbar>
         <Box display="flex" flexGrow={1} alignItems="center">
-          {isMobile ? (
-            <>
-              <IconButton
-                edge="start"
-                color="inherit"
-                onClick={() => setMobileMenuOpen(true)}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6" noWrap>
-                {appTitle}
-              </Typography>
-            </>
-          ) : (
-            <>
-              <MenuBookIcon />
-              <Typography variant="h6" noWrap sx={{ ml: 1 }}>
-                {appTitle}
-              </Typography>
-            </>
-          )}
+          {isMobile ? renderMobilePageTitle() : renderDesktopPageTitle()}
         </Box>
         {!isMobile && (
           <Box flexGrow={1} display="flex" justifyContent="center">
