@@ -1,17 +1,10 @@
 import React from "react";
 import { Drawer, Box, List, ListItem, ListItemText } from "@mui/material";
-import { MenuPageProps } from "../types";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { Collapse } from "@mui/material";
 import { menuItems } from "../constants";
-
-interface MobileMenuProps {
-  mobileMenuOpen: boolean;
-  setMobileMenuOpen: (value: boolean) => void;
-  subItemsOpen: string | null;
-  handleSubItemsClick: (page: MenuPageProps) => void;
-}
+import { MobileMenuProps } from "./types";
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
   mobileMenuOpen,

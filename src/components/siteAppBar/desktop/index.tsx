@@ -4,17 +4,12 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { MenuPageProps } from "../types";
 import { menuItems } from "../constants";
-
-interface DesktopMenuProps {
-  subItemsOpen: string | null;
-  setSubItemsOpen: (value: string | null) => void;
-}
+import { DesktopMenuProps } from "./types";
 
 const DesktopMenu: React.FC<DesktopMenuProps> = ({
   subItemsOpen,
   setSubItemsOpen,
 }) => {
-  
   const anchorRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const handleSubItemsClick = (page: MenuPageProps) => {
