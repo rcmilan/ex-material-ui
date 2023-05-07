@@ -21,21 +21,21 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { Collapse } from "@mui/material";
 
-interface SubItem {
+interface MenuSubPageProps {
   order: number;
   title: string;
   href: string;
 }
 
-interface Page {
+interface MenuPageProps {
   order: number;
   title: string;
   href: string;
-  subItems: SubItem[];
+  subItems: MenuSubPageProps[];
 }
 
 const menuTitle = "Escola";
-const pages: Page[] = [
+const pages: MenuPageProps[] = [
   {
     order: 1,
     title: "Cursos",
@@ -59,14 +59,14 @@ const pages: Page[] = [
   },
 ];
 
-const SiteMenu: React.FC = () => {
+const SiteAppBar: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [subItemsOpen, setSubItemsOpen] = useState<string | null>(null);
   const anchorRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-  const handleSubItemsClick = (page: Page) => {
+  const handleSubItemsClick = (page: MenuPageProps) => {
     if (subItemsOpen === page.title) {
       setSubItemsOpen(null);
     } else {
@@ -229,4 +229,4 @@ const SiteMenu: React.FC = () => {
   );
 };
 
-export default SiteMenu;
+export default SiteAppBar;
