@@ -46,7 +46,7 @@ const SiteAppBar: React.FC = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Box display="flex" flexGrow={1}>
+        <Box display="flex" flexGrow={1} alignItems="center">
           {isMobile ? (
             <>
               <IconButton
