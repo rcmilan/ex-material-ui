@@ -1,5 +1,7 @@
 import { MenuPageProps } from "./types";
 
+export const appTitle = "Escola";
+
 export const menuItems: MenuPageProps[] = [
   {
     order: 1,

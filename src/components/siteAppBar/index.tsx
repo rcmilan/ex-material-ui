@@ -14,8 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { MenuPageProps } from "./types";
 import DesktopMenu from "./desktop";
 import MobileMenu from "./mobile";
-
-const appTitle = "Escola";
+import { appTitle } from "./constants";
 
 const SiteAppBar: React.FC = () => {
   const theme = useTheme();
