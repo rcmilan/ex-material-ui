@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
-import SiteMenu from "./components/siteMenu";
+import SiteAppBar from "./components/siteAppBar";
 import Home from "./pages/home";
 
 function App() {
   return (
     <>
-      <SiteMenu />
+      <SiteAppBar />
 
       <Box sx={{ p: 2 }}>
         <Home />
