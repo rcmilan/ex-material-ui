@@ -7,6 +7,7 @@ function Home() {
     <Box sx={{ width: "100%", height: "100vh" }}>
       <FirstContent />
       <SecondContent />
+      <SecondContent />
       <FirstContent />
       <FirstContent />
       {/* Add more content below this component */}
