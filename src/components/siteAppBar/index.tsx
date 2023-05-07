@@ -16,29 +16,6 @@ import DesktopMenu from "./desktop";
 import MobileMenu from "./mobile";
 
 const appTitle = "Escola";
-const pages: MenuPageProps[] = [
-  {
-    order: 1,
-    title: "Cursos",
-    href: "#",
-    subItems: [
-      { order: 1, title: "Curso 1", href: "#" },
-      { order: 2, title: "Curso ABC", href: "#" },
-    ],
-  },
-  {
-    order: 2,
-    title: "Quem Somos",
-    href: "#",
-    subItems: [],
-  },
-  {
-    order: 3,
-    title: "Dúvidas",
-    href: "#",
-    subItems: [],
-  },
-];
 
 const SiteAppBar: React.FC = () => {
   const theme = useTheme();
@@ -52,7 +29,6 @@ const SiteAppBar: React.FC = () => {
 
   const renderDesktopMenu = () => (
     <DesktopMenu
-      pages={pages}
       subItemsOpen={subItemsOpen}
       setSubItemsOpen={setSubItemsOpen}
     />
@@ -60,7 +36,6 @@ const SiteAppBar: React.FC = () => {
 
   const renderMobileMenu = () => (
     <MobileMenu
-      pages={pages}
       mobileMenuOpen={mobileMenuOpen}
       setMobileMenuOpen={setMobileMenuOpen}
       subItemsOpen={subItemsOpen}

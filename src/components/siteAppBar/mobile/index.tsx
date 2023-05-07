@@ -4,9 +4,9 @@ import { MenuPageProps } from "../types";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { Collapse } from "@mui/material";
+import { menuItems } from "../constants";
 
 interface MobileMenuProps {
-  pages: MenuPageProps[];
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (value: boolean) => void;
   subItemsOpen: string | null;
@@ -14,7 +14,6 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({
-  pages,
   mobileMenuOpen,
   setMobileMenuOpen,
   subItemsOpen,
@@ -28,7 +27,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
     >
       <Box sx={{ width: 250 }}>
         <List>
-          {pages.map((page) => (
+          {menuItems.map((page) => (
             <React.Fragment key={page.order}>
               <ListItem onClick={() => handleSubItemsClick(page)}>
                 <ListItemText primary={page.title} />

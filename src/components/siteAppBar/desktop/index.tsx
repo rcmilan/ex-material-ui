@@ -3,18 +3,18 @@ import { Button, Menu, MenuItem, Box } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { MenuPageProps } from "../types";
+import { menuItems } from "../constants";
 
 interface DesktopMenuProps {
-  pages: MenuPageProps[];
   subItemsOpen: string | null;
   setSubItemsOpen: (value: string | null) => void;
 }
 
 const DesktopMenu: React.FC<DesktopMenuProps> = ({
-  pages,
   subItemsOpen,
   setSubItemsOpen,
 }) => {
+  
   const anchorRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const handleSubItemsClick = (page: MenuPageProps) => {
@@ -36,7 +36,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
 
   return (
     <Box display="flex" justifyContent="center" flexGrow={1}>
-      {pages.map((page, index) => (
+      {menuItems.map((page, index) => (
         <React.Fragment key={page.title}>
           {page.subItems.length > 0 ? (
             <>
