@@ -37,7 +37,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
   return (
     <Box display="flex" justifyContent="center" flexGrow={1}>
       {menuItems.map((page, index) => (
-        <React.Fragment key={page.title}>
+        <React.Fragment key={page.order}>
           {page.subItems.length > 0 ? (
             <>
               <Button
@@ -61,7 +61,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
               >
                 {page.subItems.map((subItem) => (
                   <MenuItem
-                    key={subItem.title}
+                    key={subItem.order}
                     onClick={() => setSubItemsOpen(null)}
                     component="a"
                     href={subItem.href}
